@@ -56,28 +56,29 @@ Fetches data from the GitHub API and displays it in a clean web interface: profi
 ---
 
 ## 📁 Project Structure
+```text
 dev-dashboard/
-├── backend/
-│ ├── app/
-│ │ ├── init.py
-│ │ ├── config.py # settings loaded from .env
-│ │ ├── database.py # SQLAlchemy setup
-│ │ ├── models.py # CacheEntry, Snapshot
-│ │ ├── main.py # FastAPI entry point
-│ │ └── services/
-│ │ ├── init.py
-│ │ ├── github.py # GitHub REST + GraphQL client
-│ │ └── aggregator.py # aggregation + cache logic
-│ ├── requirements.txt
-│ └── .env.example
-├── frontend/
-│ ├── index.html
-│ ├── style.css
-│ ├── app.js
-│ └── chart.min.js
-├── .gitignore
-└── README.md
-
+|-- backend/
+|   |-- app/
+|   |   |-- __init__.py
+|   |   |-- config.py           # settings loaded from .env
+|   |   |-- database.py         # SQLAlchemy setup
+|   |   |-- models.py           # CacheEntry, Snapshot
+|   |   |-- main.py             # FastAPI entry point
+|   |   `-- services/
+|   |       |-- __init__.py
+|   |       |-- github.py       # GitHub REST + GraphQL client
+|   |       `-- aggregator.py   # aggregation + cache logic
+|   |-- requirements.txt
+|   `-- .env.example
+|-- frontend/
+|   |-- index.html
+|   |-- style.css
+|   |-- app.js
+|   `-- chart.min.js
+|-- .gitignore
+`-- README.md
+```
 
 ---
 
