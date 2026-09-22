@@ -1,116 +1,99 @@
-📊 Dev Dashboard
-<div align="center">
+# 📊 Dev Dashboard
 
-A personal developer statistics dashboard
+A personal developer statistics dashboard.
 
 Fetches data from the GitHub API and displays it in a clean web interface: profile, language breakdown, top repositories, and a GitHub-style yearly contribution heatmap.
 
-https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white
-https://img.shields.io/badge/FastAPI-0.115-009688?style=flat-square&logo=fastapi&logoColor=white
-https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black
-https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite&logoColor=white
-https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
-</div>
-📸 Screenshot
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=flat-square&logo=fastapi&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
 
-    Add a screenshot here after your first run — drag a PNG into the GitHub README editor and it will insert the link automatically.
+---
 
-<!-- ![Dev Dashboard screenshot](docs/screenshot.png) -->
-✨ Features
-	Feature	Description
-👤	Profile	Avatar, name, bio, followers, public repo count
-📈	Key stats	Total stars, commits over the past year, language count
-🍩	Language chart	Doughnut chart of repository languages
-🟩	Contribution heatmap	365-day activity calendar, GitHub-style
-⭐	Top repositories	Top 6 repos sorted by stars, with descriptions
-⚡	Caching	Responses stored in SQLite with configurable TTL
-📅	Daily snapshots	Metrics saved for future trend charts
-🔍	Username search	Look up any public GitHub account
-🛠 Tech Stack
-<table> <tr> <td valign="top" width="50%">
+## 📸 Screenshot
 
-Backend
+> Add a screenshot here after your first run. Drag a PNG into the GitHub README editor — it will upload and insert the correct link automatically.
 
-    🐍 Python 3.11+
+---
 
-    ⚡ FastAPI
+## ✨ Features
 
-    🔧 SQLAlchemy
+- 👤 **Profile** — avatar, name, bio, followers, public repo count
+- 📈 **Key stats** — total stars, commits over the past year, language count
+- 🍩 **Language chart** — doughnut chart of repository languages
+- 🟩 **Contribution heatmap** — 365-day activity calendar, GitHub-style
+- ⭐ **Top repositories** — top 6 repos sorted by stars, with descriptions
+- ⚡ **Caching** — responses stored in SQLite with configurable TTL
+- 📅 **Daily snapshots** — metrics saved for future trend charts
+- 🔍 **Username search** — look up any public GitHub account
 
-    🌐 httpx
+---
 
-    ✅ pydantic-settings
+## 🛠 Tech Stack
 
-</td> <td valign="top" width="50%">
+**Backend**
+- Python 3.11+
+- FastAPI
+- SQLAlchemy
+- httpx
+- pydantic-settings
 
-Frontend
+**Frontend**
+- Vanilla JavaScript (ES6+)
+- Chart.js
+- Plain CSS with custom properties
+- Responsive layout
 
-    💛 Vanilla JavaScript (ES6+)
+**Database**
+- SQLite (cache + snapshots)
 
-    📊 Chart.js
+**APIs**
+- GitHub REST API
+- GitHub GraphQL API
 
-    🎨 Plain CSS with custom properties
+---
 
-    📱 Responsive layout
-
-</td> </tr> <tr> <td valign="top" width="50%">
-
-Database
-
-    💾 SQLite (cache + snapshots)
-
-</td> <td valign="top" width="50%">
-
-APIs
-
-    🔗 GitHub REST API
-
-    🔗 GitHub GraphQL API
-
-</td> </tr> </table>
-📁 Project Structure
-text
-
+## 📁 Project Structure
 dev-dashboard/
 ├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── config.py           # settings loaded from .env
-│   │   ├── database.py         # SQLAlchemy setup
-│   │   ├── models.py           # CacheEntry, Snapshot
-│   │   ├── main.py             # FastAPI entry point
-│   │   └── services/
-│   │       ├── __init__.py
-│   │       ├── github.py       # GitHub REST + GraphQL client
-│   │       └── aggregator.py   # aggregation + cache logic
-│   ├── requirements.txt
-│   └── .env.example
+│ ├── app/
+│ │ ├── init.py
+│ │ ├── config.py # settings loaded from .env
+│ │ ├── database.py # SQLAlchemy setup
+│ │ ├── models.py # CacheEntry, Snapshot
+│ │ ├── main.py # FastAPI entry point
+│ │ └── services/
+│ │ ├── init.py
+│ │ ├── github.py # GitHub REST + GraphQL client
+│ │ └── aggregator.py # aggregation + cache logic
+│ ├── requirements.txt
+│ └── .env.example
 ├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   ├── app.js
-│   └── chart.min.js
+│ ├── index.html
+│ ├── style.css
+│ ├── app.js
+│ └── chart.min.js
 ├── .gitignore
 └── README.md
 
-🚀 Getting Started
-Requirements
 
-    Python 3.11+ — download
+---
 
-    Git — download
+## 🚀 Getting Started
 
-    GitHub Personal Access Token — create one
+### Requirements
 
-1. Clone the repository
-bash
+- Python 3.11+ — https://www.python.org/downloads/
+- Git — https://git-scm.com/
+- GitHub Personal Access Token — https://github.com/settings/tokens?type=beta
 
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/SouthVirginia19/dev-dashboard.git
 cd dev-dashboard/backend
-
-2. Create a virtual environment
-bash
-
 python -m venv .venv
 
 # Windows (PowerShell)
@@ -130,7 +113,6 @@ source .venv/bin/activate
     Confirm with Y. This affects only your user account.
 
 3. Install dependencies
-bash
 
 pip install -r requirements.txt
 
@@ -138,7 +120,7 @@ pip install -r requirements.txt
 
     Open https://github.com/settings/tokens?type=beta
 
-    Generate new token → give it any name
+    Generate new token — give it any name
 
     Expiration: 90 days or longer
 
@@ -146,11 +128,11 @@ pip install -r requirements.txt
 
     Account permissions — enable:
 
-        ✅ Followers → Read-only
+        Followers → Read-only
 
-        ✅ Starring → Read-only
+        Starring → Read-only
 
-    Generate token → copy it immediately (shown only once)
+    Generate token, copy it immediately (shown only once)
 
     💡 The app runs without a token, but the contribution heatmap and yearly commit count stay empty — the GraphQL endpoint requires authentication.
 
@@ -164,7 +146,7 @@ GITHUB_USERNAME=your_github_username
 DATABASE_URL=sqlite:///./dashboard.db
 CACHE_TTL_MINUTES=60
 
-⚠️ No spaces, no quotes. One key per line.
+No spaces, no quotes. One key per line.
 6. Start the server
 bash
 
@@ -287,9 +269,6 @@ Released under the MIT License. See LICENSE for details.
 
 SouthVirginia19
 
-    GitHub: @SouthVirginia19
-
-<div align="center">
+GitHub: @SouthVirginia19
 
 ⭐ If this project was useful, consider giving it a star!
-</div>
