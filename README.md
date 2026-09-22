@@ -95,7 +95,7 @@ dev-dashboard/
 git clone https://github.com/SouthVirginia19/dev-dashboard.git
 cd dev-dashboard/backend
 python -m venv .venv
-
+```
 # Windows (PowerShell)
 .\.venv\Scripts\Activate.ps1
 
