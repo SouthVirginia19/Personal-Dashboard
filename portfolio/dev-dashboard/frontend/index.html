@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/chart.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Dev Dashboard</h1>
+    <form id="search-form">
+      <input id="username" type="text" placeholder="GitHub username" />
+      <button type="submit">Загрузить</button>
+    </form>
+  </header>
+
+  <main id="app" class="hidden">
+    <section class="profile card">
+      <img id="avatar" alt="avatar" />
+      <div class="profile-info">
+        <h2 id="name"></h2>
+        <p id="bio" class="muted"></p>
+        <p class="muted">
+          <span id="login"></span> · <span id="followers"></span> подписчиков ·
+          <span id="repos"></span> репозиториев
+        </p>
+      </div>
+      <div id="cache-badge" class="badge"></div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="card stat"><span class="label">Звёзд</span><span id="stars" class="value"></span></div>
+      <div class="card stat"><span class="label">Коммитов за год</span><span id="commits" class="value"></span></div>
+      <div class="card stat"><span class="label">Языков</span><span id="langs-count" class="value"></span></div>
+      <div class="card stat"><span class="label">Подписчиков</span><span id="followers-2" class="value"></span></div>
+    </section>
+
+    <section class="charts">
+      <div class="card">
+        <h3>Языки</h3>
+        <canvas id="langs-chart"></canvas>
+      </div>
+      <div class="card">
+        <h3>Активность за год</h3>
+        <div id="heatmap" class="heatmap"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Топ репозиториев</h3>
+      <ul id="top-repos" class="repo-list"></ul>
+    </section>
+  </main>
+
+  <div id="loader" class="loader hidden">Загрузка...</div>
+  <div id="error" class="error hidden"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
